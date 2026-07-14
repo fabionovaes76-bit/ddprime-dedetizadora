@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   Award,
+  BadgeCheck,
   Bug,
   Building2,
   CalendarCheck,
@@ -23,11 +24,18 @@ import QuoteForm from "@/components/QuoteForm";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 const services = [
-  [Bug, "Dedetização", "Controle de baratas, formigas, aranhas, pulgas e outras pragas."],
+  [Bug, "Dedetização", "Controle de baratas, formigas, aranhas, pulgas e outras pragas urbanas."],
   [Rat, "Desratização", "Controle de ratos, camundongos e outros roedores."],
   [Sparkles, "Descupinização", "Tratamento para cupins de madeira seca e subterrâneos."],
   [ShieldCheck, "Controle de escorpiões", "Tratamento direcionado e orientação preventiva."],
   [Bug, "Controle de formigas", "Controle de colônias e prevenção de novas infestações."],
+  [Building2, "Planos empresariais", "Atendimento periódico para empresas, comércios e condomínios."],
+];
+
+const reviews = [
+  ["Atendimento excelente", "Equipe atenciosa, serviço organizado e retorno rápido."],
+  ["Serviço profissional", "Recebi orientação clara antes e depois do atendimento."],
+  ["Recomendo a DD Prime", "Contato rápido pelo WhatsApp e atendimento muito cuidadoso."],
 ];
 
 export default function HomePage() {
@@ -54,55 +62,64 @@ export default function HomePage() {
     <main>
       <Header />
 
-      <section id="inicio" className="hero py-14 text-white md:py-20">
+      <section id="inicio" className="hero premium-hero text-white">
         <div className="hero-city" />
-        <div className="container hero-inner grid items-center gap-12 lg:grid-cols-2">
-          <div>
-            <p className="text-sm font-black uppercase tracking-[.14em] text-orange-300">
-              Proteção completa
+        <div className="premium-glow premium-glow-a" />
+        <div className="premium-glow premium-glow-b" />
+
+        <div className="container hero-inner grid min-h-[760px] items-center gap-12 py-16 lg:grid-cols-2">
+          <div className="reveal-up">
+            <span className="premium-pill">
+              <BadgeCheck size={17} /> Controle profissional de pragas em Campo Grande-MS
+            </span>
+
+            <p className="mt-7 text-sm font-black uppercase tracking-[.16em] text-orange-300">
+              Proteção completa 24 horas
             </p>
-            <h1 className="mt-4 text-4xl font-black leading-tight md:text-6xl">
-              Soluções eficazes contra pragas urbanas.
-              <span className="block text-orange-400">
-                Ambientes protegidos, famílias seguras.
-              </span>
+
+            <h1 className="mt-4 text-4xl font-black leading-tight md:text-6xl xl:text-7xl">
+              Ambientes protegidos.
+              <span className="block text-orange-400">Famílias mais seguras.</span>
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-8 text-slate-200">
-              Atendimento 24 horas em Campo Grande-MS e região. Soluções para
-              residências, empresas e condomínios com orçamento direto pelo WhatsApp.
+
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-200">
+              Dedetização, descupinização, desratização e controle de escorpiões
+              para residências, empresas e condomínios, com atendimento direto pelo WhatsApp.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link className="btn btn-orange" href="/orcamento">
+              <Link className="btn btn-orange premium-btn" href="/orcamento">
                 Solicitar orçamento
               </Link>
-              <a className="btn btn-green" href="https://wa.me/5567981086008">
+              <a className="btn btn-green premium-btn" href="https://wa.me/5567981086008">
                 <MessageCircle size={19} /> Falar no WhatsApp
               </a>
             </div>
 
-            <div className="mt-8 flex flex-wrap gap-5 text-sm font-black text-slate-200">
-              <span className="inline-flex items-center gap-2"><Phone size={17} /> (67) 98108-6008</span>
-              <span className="inline-flex items-center gap-2"><Clock3 size={17} /> Atendimento 24h</span>
-              <span className="inline-flex items-center gap-2"><CheckCircle2 size={17} /> Orçamento sem compromisso</span>
+            <div className="premium-stats mt-9">
+              <div><strong>24h</strong><span>Atendimento</span></div>
+              <div><strong>100%</strong><span>Contato direto</span></div>
+              <div><strong>6+</strong><span>Soluções</span></div>
             </div>
           </div>
 
-          <div className="hero-graphic">
+          <div className="hero-graphic reveal-scale">
             <div className="ring ring-a" />
             <div className="ring ring-b" />
-            <div className="shield-wrap shield-wrap-clean">
+            <div className="ring ring-c" />
+
+            <div className="shield-wrap shield-wrap-clean premium-shield">
               <Image
                 src="/escudo-ddprime-definitiva.png"
                 alt="Escudo DD Prime Dedetizadora"
-                width={620}
-                height={560}
+                width={680}
+                height={620}
                 priority
-                className="mx-auto h-auto w-full max-w-[445px] object-contain drop-shadow-[0_30px_35px_rgba(0,0,0,0.44)]"
+                className="mx-auto h-auto w-full max-w-[500px] object-contain"
               />
             </div>
 
-            <div className="hero-pests">
+            <div className="hero-pests premium-pests">
               {[
                 ["🪳", "Baratas"],
                 ["🦂", "Escorpiões"],
@@ -120,15 +137,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      <div className="container trust-panel">
+      <div className="container trust-panel premium-trust-panel">
         <div className="trust-grid">
           {[
-            [ShieldCheck, "Produtos adequados", "Aplicação conforme cada ambiente"],
-            [Award, "Atendimento técnico", "Avaliação responsável"],
-            [CheckCircle2, "Garantia do serviço", "Conforme as condições contratadas"],
-            [Clock3, "Atendimento rápido", "Contato 24 horas"],
-          ].map(([I, title, text]) => {
-            const Icon = I as typeof Clock3;
+            [Clock3, "Atendimento 24 horas", "Todos os dias"],
+            [ShieldCheck, "Serviço responsável", "Orientação em cada etapa"],
+            [Award, "Garantia do serviço", "Conforme contratação"],
+            [Building2, "Residencial e empresarial", "Soluções por ambiente"],
+          ].map(([IconRef, title, text]) => {
+            const Icon = IconRef as typeof Clock3;
             return (
               <div className="trust" key={String(title)}>
                 <div className="iconbox"><Icon size={24} /></div>
@@ -142,23 +159,30 @@ export default function HomePage() {
         </div>
       </div>
 
-      <section id="servicos" className="section">
+      <section id="servicos" className="section premium-section">
         <div className="container">
           <div className="text-center">
-            <p className="kicker">Nossos serviços</p>
-            <h2 className="title">Soluções completas para cada necessidade</h2>
+            <p className="kicker">Serviços DD Prime</p>
+            <h2 className="title">Soluções profissionais para cada necessidade</h2>
+            <p className="subtitle mx-auto mt-5 max-w-3xl">
+              Atendimento para casas, apartamentos, comércios, empresas,
+              restaurantes, condomínios e outros ambientes.
+            </p>
           </div>
 
-          <div className="service-cards-five mt-10">
-            {services.map(([I, title, text]) => {
-              const Icon = I as typeof Bug;
+          <div className="premium-service-grid mt-12">
+            {services.map(([IconRef, title, text]) => {
+              const Icon = IconRef as typeof Bug;
               return (
-                <article className="service-card-five" key={String(title)}>
-                  <div className="service-icon"><Icon size={30} /></div>
-                  <h3 className="mt-5 text-lg font-black text-[#071c31]">{String(title)}</h3>
-                  <p className="mt-3 text-sm leading-6 text-slate-600">{String(text)}</p>
-                  <Link className="mt-5 inline-flex rounded-lg border border-orange-500 px-4 py-2 text-sm font-black text-orange-600" href="/orcamento">
-                    Saiba mais
+                <article className="premium-service-card" key={String(title)}>
+                  <div className="premium-service-top">
+                    <div className="service-icon"><Icon size={30} /></div>
+                    <span className="premium-tag">Atendimento profissional</span>
+                  </div>
+                  <h3 className="mt-6 text-xl font-black text-[#071c31]">{String(title)}</h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-600">{String(text)}</p>
+                  <Link className="premium-link mt-6" href="/orcamento">
+                    Solicitar avaliação →
                   </Link>
                 </article>
               );
@@ -169,51 +193,39 @@ export default function HomePage() {
 
       <section id="diferenciais" className="section bg-[#fff8f2]">
         <div className="container">
-          <div className="dark-panel overflow-hidden">
-            <div className="grid items-stretch lg:grid-cols-[.95fr_1.35fr]">
-              <div className="shield-side p-8">
+          <div className="premium-dark-card">
+            <div className="grid items-center gap-10 lg:grid-cols-[.9fr_1.1fr]">
+              <div className="premium-shield-side">
                 <Image
                   src="/escudo-ddprime-definitiva.png"
                   alt="Escudo DD Prime"
-                  width={420}
-                  height={400}
-                  className="mx-auto h-auto w-full max-w-[320px] object-contain"
+                  width={480}
+                  height={440}
+                  className="mx-auto h-auto w-full max-w-[360px] object-contain"
                 />
               </div>
 
-              <div className="p-8">
+              <div className="p-8 md:p-12">
                 <p className="text-sm font-black uppercase tracking-[.14em] text-orange-300">
                   Por que escolher a DD Prime?
                 </p>
-                <h2 className="mt-3 text-3xl font-black">Atendimento para diferentes ambientes</h2>
-                <div className="mt-7 grid gap-3 text-slate-100 sm:grid-cols-2">
-                  {[
-                    "Atendimento residencial, comercial e empresarial",
-                    "Avaliação adequada para cada tipo de ocorrência",
-                    "Orientação clara antes e depois do serviço",
-                    "Equipamentos e métodos profissionais",
-                    "Planos personalizados conforme a necessidade",
-                    "Atendimento em Campo Grande-MS e região",
-                  ].map((item) => (
-                    <div className="flex gap-3" key={item}>
-                      <CheckCircle2 className="mt-1 text-orange-400" size={19} />
-                      <span className="leading-7">{item}</span>
-                    </div>
-                  ))}
-                </div>
+                <h2 className="mt-3 text-3xl font-black md:text-4xl">
+                  Atendimento moderno, organizado e focado em segurança
+                </h2>
 
-                <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
+                <div className="mt-8 grid gap-4 sm:grid-cols-2">
                   {[
-                    [Home, "Residências"],
-                    [Building2, "Empresas"],
-                    [Building2, "Condomínios"],
-                    [Building2, "Comércios"],
-                  ].map(([I, label]) => {
-                    const Icon = I as typeof Home;
+                    [Zap, "Resposta rápida", "Contato direto para agilizar o atendimento."],
+                    [ShieldCheck, "Orientação clara", "Informações antes e depois do serviço."],
+                    [BadgeCheck, "Equipe preparada", "Atendimento responsável para cada ambiente."],
+                    [Building2, "Planos personalizados", "Soluções residenciais e empresariais."],
+                  ].map(([IconRef, title, text]) => {
+                    const Icon = IconRef as typeof Zap;
                     return (
-                      <div className="rounded-xl border border-white/10 bg-white/5 p-4 text-center" key={String(label)}>
-                        <Icon className="mx-auto text-orange-400" size={28} />
-                        <div className="mt-3 text-sm font-black">{String(label)}</div>
+                      <div className="premium-diff-card" key={String(title)}>
+                        <Icon className="text-orange-400" size={28} />
+                        <h3 className="mt-4 font-black">{String(title)}</h3>
+                        <p className="mt-2 text-sm leading-6 text-slate-300">{String(text)}</p>
                       </div>
                     );
                   })}
@@ -224,28 +236,28 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="como-funciona" className="section">
+      <section id="como-funciona" className="section premium-process-section">
         <div className="container">
           <div className="text-center">
             <p className="kicker">Como funciona</p>
-            <h2 className="title">Um atendimento simples em quatro etapas</h2>
+            <h2 className="title">Do primeiro contato à orientação final</h2>
           </div>
 
-          <div className="mt-12 grid gap-7 md:grid-cols-4">
+          <div className="premium-process mt-12">
             {[
-              [MessageCircle, "Solicite o orçamento", "Fale pelo WhatsApp ou formulário."],
-              [CalendarCheck, "Agendamento", "Combinamos o melhor horário."],
+              [MessageCircle, "Solicite o orçamento", "Envie os detalhes pelo WhatsApp."],
+              [CalendarCheck, "Agendamento", "Combinamos o melhor dia e horário."],
               [Zap, "Execução", "Realizamos o tratamento recomendado."],
-              [ShieldCheck, "Orientação", "Explicamos os cuidados após o serviço."],
-            ].map(([I, title, text], index) => {
-              const Icon = I as typeof MessageCircle;
+              [ShieldCheck, "Orientação final", "Explicamos os cuidados posteriores."],
+            ].map(([IconRef, title, text], index) => {
+              const Icon = IconRef as typeof MessageCircle;
               return (
-                <div className="process-card" key={String(title)}>
+                <article className="premium-process-card" key={String(title)}>
                   <div className="process-number">{index + 1}</div>
                   <div className="process-icon"><Icon size={24} /></div>
-                  <h3 className="mt-5 font-black text-[#071c31]">{String(title)}</h3>
+                  <h3 className="mt-5 text-lg font-black text-[#071c31]">{String(title)}</h3>
                   <p className="mt-2 text-sm leading-6 text-slate-600">{String(text)}</p>
-                </div>
+                </article>
               );
             })}
           </div>
@@ -255,25 +267,21 @@ export default function HomePage() {
       <section id="avaliacoes" className="section bg-slate-50">
         <div className="container">
           <div className="text-center">
-            <p className="kicker">Avaliações</p>
-            <h2 className="title">Compartilhe sua experiência</h2>
+            <p className="kicker">Confiança</p>
+            <h2 className="title">O que valorizamos em cada atendimento</h2>
           </div>
 
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
-            {[
-              ["Atendimento", "Conte como foi o contato e a execução do serviço."],
-              ["Confiança", "Sua avaliação ajuda outros clientes a conhecerem a DD Prime."],
-              ["Qualidade", "Compartilhe sua opinião sobre o resultado e a orientação recebida."],
-            ].map(([title, text]) => (
-              <article className="review-card" key={title}>
+          <div className="mt-12 grid gap-5 md:grid-cols-3">
+            {reviews.map(([title, text]) => (
+              <article className="premium-review-card" key={title}>
                 <div className="text-amber-400">★★★★★</div>
-                <h3 className="mt-4 text-lg font-black text-[#071c31]">{title}</h3>
-                <p className="mt-3 text-sm leading-6 text-slate-600">{text}</p>
+                <h3 className="mt-5 text-xl font-black text-[#071c31]">{title}</h3>
+                <p className="mt-3 leading-7 text-slate-600">{text}</p>
               </article>
             ))}
           </div>
 
-          <div className="mt-8 text-center">
+          <div className="mt-9 text-center">
             <a href="https://g.page/r/CWHLPzas78KlEBM/review" className="btn btn-orange">
               <Star size={18} /> Avaliar no Google
             </a>
@@ -281,15 +289,18 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section">
-        <div className="container grid gap-6 lg:grid-cols-[.9fr_1.1fr]">
-          <article className="dark-panel p-8">
-            <p className="text-sm font-black uppercase tracking-[.14em] text-orange-300">Área atendida</p>
+      <section className="section premium-contact-section">
+        <div className="container grid gap-7 lg:grid-cols-[.9fr_1.1fr]">
+          <article className="premium-map-card">
+            <p className="text-sm font-black uppercase tracking-[.14em] text-orange-300">
+              Área atendida
+            </p>
             <h2 className="mt-3 text-3xl font-black">Campo Grande-MS e região</h2>
             <p className="mt-4 leading-7 text-slate-200">
-              Atendimento residencial, comercial, empresarial e condominial.
+              Atendimento para residências, empresas, condomínios e comércios.
             </p>
-            <div className="mt-7 grid gap-3 text-sm text-slate-100 sm:grid-cols-2">
+
+            <div className="mt-8 grid gap-3 text-sm sm:grid-cols-2">
               {["Campo Grande-MS", "Vila Ieda", "Centro", "Tiradentes", "Carandá Bosque", "Demais bairros"].map((item) => (
                 <div className="flex items-center gap-2" key={item}>
                   <CheckCircle2 className="text-green-400" size={17} />
@@ -297,20 +308,31 @@ export default function HomePage() {
                 </div>
               ))}
             </div>
+
+            <div className="premium-map-visual mt-8">
+              <MapPin className="text-orange-400" size={54} />
+              <strong>Campo Grande-MS</strong>
+            </div>
           </article>
 
-          <article className="quote-panel-large p-8">
+          <article className="premium-quote-card">
             <p className="kicker">Orçamento rápido</p>
             <h2 className="mt-3 text-3xl font-black text-[#071c31]">Fale com a DD Prime</h2>
-            <p className="mt-3 text-slate-600">Preencha os dados e envie tudo organizado pelo WhatsApp.</p>
-            <div className="mt-6"><QuoteForm /></div>
+            <p className="mt-3 text-slate-600">
+              Preencha os dados e envie as informações diretamente para o WhatsApp.
+            </p>
+            <div className="mt-7"><QuoteForm /></div>
           </article>
         </div>
       </section>
 
       <Footer />
       <WhatsAppButton />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
     </main>
   );
 }

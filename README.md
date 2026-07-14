@@ -1,25 +1,23 @@
-# DD Prime — Versão Definitiva V9
+# DD Prime — Premium 2026
 
-Versão final construída com base no protótipo aprovado.
+Versão premium 2026 baseada na versão definitiva.
 
 ## Inclui
 
-- Logo premium no cabeçalho
-- Escudo premium no banner
-- Hero sem foto de técnico
-- Serviços em cards
-- Diferenciais
-- Como funciona
+- Hero premium com animações
+- Escudo em destaque
+- Indicadores rápidos
+- Cards de serviços modernos
+- Diferenciais em layout escuro
+- Processo de atendimento
 - Avaliações
 - Área atendida
-- Formulário de orçamento pelo WhatsApp
-- Rodapé completo
+- Formulário para WhatsApp
 - SEO local
-- sitemap.xml
-- robots.txt
-- Layout responsivo
+- Sitemap e robots.txt
+- Responsivo
 
-## Publicar
+## Publicação
 
 Copie todos os arquivos desta pasta para `ddprime-site-v1`, substituindo os atuais.
 
@@ -29,6 +27,6 @@ Depois execute:
 npm.cmd install
 npm.cmd run build
 git add .
-git commit -m "Publica versão definitiva do site"
+git commit -m "Publica versão Premium 2026"
 git push
 ```
