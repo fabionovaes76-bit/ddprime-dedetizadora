@@ -93,7 +93,7 @@ export default function HomePage() {
             <div className="ring ring-b" />
             <div className="shield-wrap shield-wrap-clean">
               <Image
-                src="/escudo-ddprime-v8.png"
+                src="/escudo-ddprime-definitiva.png"
                 alt="Escudo DD Prime Dedetizadora"
                 width={620}
                 height={560}
@@ -173,7 +173,7 @@ export default function HomePage() {
             <div className="grid items-stretch lg:grid-cols-[.95fr_1.35fr]">
               <div className="shield-side p-8">
                 <Image
-                  src="/escudo-ddprime-v8.png"
+                  src="/escudo-ddprime-definitiva.png"
                   alt="Escudo DD Prime"
                   width={420}
                   height={400}
