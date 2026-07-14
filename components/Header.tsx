@@ -15,11 +15,11 @@ export default function Header() {
             className="h-16 w-auto object-contain"
           />
         </Link>
-        <nav className="desktop-nav flex items-center gap-7 text-sm font-bold text-slate-700">
-          <Link href="/">Início</Link>
-          <Link href="/servicos">Serviços</Link>
-          <Link href="/sobre">Sobre</Link>
-          <Link href="/contato">Contato</Link>
+        <nav className="desktop-nav flex items-center gap-7 text-sm font-black text-slate-700">
+          <a href="#servicos">Serviços</a>
+          <a href="#diferenciais">Diferenciais</a>
+          <a href="#como-funciona">Como funciona</a>
+          <a href="#contato">Contato</a>
         </nav>
         <Link href="/orcamento" className="btn btn-primary text-sm">
           Solicitar orçamento

@@ -2,12 +2,20 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: {
-    default: "DD Prime Dedetizadora | Campo Grande-MS",
-    template: "%s | DD Prime Dedetizadora",
-  },
+  metadataBase: new URL("https://ddprimededetizadora.com.br"),
+  title: "Dedetizadora em Campo Grande-MS | DD Prime",
   description:
-    "Dedetização, descupinização, desratização e controle de escorpiões em Campo Grande-MS.",
+    "Dedetização, descupinização, desratização e controle de escorpiões em Campo Grande-MS. Atendimento 24 horas e orçamento pelo WhatsApp.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "DD Prime Dedetizadora em Campo Grande-MS",
+    description:
+      "Controle profissional de pragas urbanas para residências, empresas e condomínios.",
+    url: "https://ddprimededetizadora.com.br",
+    siteName: "DD Prime Dedetizadora",
+    locale: "pt_BR",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

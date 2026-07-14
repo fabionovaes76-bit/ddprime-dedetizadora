@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0a1d30] py-12 text-slate-200">
+    <footer id="contato" className="bg-[#071827] py-12 text-slate-200">
       <div className="container grid gap-8 md:grid-cols-3">
         <div>
           <Image
@@ -19,14 +19,15 @@ export default function Footer() {
         <div>
           <h3 className="font-black text-white">Contato</h3>
           <p className="mt-4">WhatsApp: (67) 98108-6008</p>
-          <p className="mt-2 break-all">ddprimededetisadora@gmail.com</p>
+          <p className="mt-2 break-all">ddprimededetizadora@gmail.com</p>
+          <p className="mt-2">Atendimento 24 horas</p>
         </div>
         <div>
           <h3 className="font-black text-white">Endereço</h3>
           <p className="mt-4 leading-7">
             Rua Marcelino Pires, 237<br />
             Vila Ieda<br />
-            Campo Grande-MS
+            Campo Grande-MS — CEP 79050-570
           </p>
         </div>
       </div>

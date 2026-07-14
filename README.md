@@ -1,34 +1,33 @@
-# DD Prime Site V3
+# DD Prime — Home Premium V4
 
-Versão premium do site da DD Prime Dedetizadora.
+Reformulação completa da página inicial, sem foto de técnico.
 
-## Inclui
+## Principais melhorias
 
-- Home responsiva
-- Páginas de serviços, sobre, contato e orçamento
-- Simulador de orçamento pelo WhatsApp
-- Logo e cores da DD Prime
-- Next.js 16.2
-- TypeScript e Tailwind CSS
+- Hero institucional com escudo e ícones de pragas
+- Atendimento 24 horas
+- Serviços em cards
+- Diferenciais
+- Como funciona
+- Chamada para WhatsApp e telefone
+- SEO local
+- Schema LocalBusiness
+- sitemap.xml
+- robots.txt
+- Página de orçamento pelo WhatsApp
 
-## Executar
+## Publicar
 
-```bash
-npm install
-npm run dev
-```
+Copie os arquivos desta versão para a pasta atual `ddprime-site-v1`.
 
-Abra `http://localhost:3000`.
+Depois execute:
 
-## Publicar no repositório atual
-
-Copie os arquivos desta versão para a pasta do projeto atual e execute:
-
-```bash
-npm install
+```powershell
+npm.cmd install
+npm.cmd run build
 git add .
-git commit -m "Publica versão premium do site"
+git commit -m "Reformula página inicial premium"
 git push
 ```
 
-A Vercel iniciará uma nova implantação automaticamente.
+A Vercel publicará automaticamente.

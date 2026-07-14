@@ -1,6 +1,6 @@
 {
-  "name": "ddprime-site-v3",
-  "version": "3.0.0",
+  "name": "ddprime-site-v4",
+  "version": "4.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -8,9 +8,9 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "16.2.0",
-    "react": "19.2.0",
-    "react-dom": "19.2.0",
+    "next": "15.5.9",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
     "lucide-react": "0.468.0"
   },
   "devDependencies": {
