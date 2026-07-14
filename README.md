@@ -1,21 +1,21 @@
-# DD Prime — Site V7 Modelo Final
+# DD Prime — Site V8
 
-Versão completa baseada no último protótipo aprovado.
+Versão construída com base no último protótipo aprovado.
 
 ## Inclui
 
 - Nova logo e escudo premium
-- Banner institucional sem foto de técnico
+- Banner sem foto de técnico
 - Serviços
 - Diferenciais
-- Formulário de orçamento pelo WhatsApp
 - Como funciona
-- Avaliação no Google
-- Área de atendimento
+- Avaliações
+- Área atendida
+- Formulário de orçamento pelo WhatsApp
 - Rodapé completo
-- SEO, sitemap e robots.txt
+- SEO local, sitemap e robots.txt
 
-## Publicar
+## Publicação
 
 Copie todos os arquivos desta pasta para `ddprime-site-v1`, substituindo os atuais.
 
@@ -25,6 +25,6 @@ Depois execute:
 npm.cmd install
 npm.cmd run build
 git add .
-git commit -m "Publica modelo final do site"
+git commit -m "Publica site V8"
 git push
 ```
