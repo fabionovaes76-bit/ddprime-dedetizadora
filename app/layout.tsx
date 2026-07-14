@@ -5,25 +5,18 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://ddprimededetizadora.com.br"),
   title: "Dedetizadora em Campo Grande-MS | DD Prime",
   description:
-    "Dedetização, descupinização, desratização e controle de escorpiões em Campo Grande-MS. Atendimento 24 horas e orçamento pelo WhatsApp.",
+    "Controle de pragas urbanas em Campo Grande-MS. Dedetização, descupinização, desratização e controle de escorpiões. Atendimento 24 horas.",
   alternates: { canonical: "/" },
   openGraph: {
     title: "DD Prime Dedetizadora em Campo Grande-MS",
-    description:
-      "Controle profissional de pragas urbanas para residências, empresas e condomínios.",
+    description: "Proteção para residências, empresas e condomínios.",
     url: "https://ddprimededetizadora.com.br",
     siteName: "DD Prime Dedetizadora",
     locale: "pt_BR",
-    type: "website",
-  },
+    type: "website"
+  }
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{ children: React.ReactNode }>) {
-  return (
-    <html lang="pt-BR">
-      <body>{children}</body>
-    </html>
-  );
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return <html lang="pt-BR"><body>{children}</body></html>;
 }

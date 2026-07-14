@@ -1,6 +1,6 @@
 {
-  "name": "ddprime-site-v4",
-  "version": "4.0.0",
+  "name": "ddprime-site-v5",
+  "version": "5.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",

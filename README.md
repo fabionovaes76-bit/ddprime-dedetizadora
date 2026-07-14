@@ -1,24 +1,23 @@
-# DD Prime — Home Premium V4
+# DD Prime — Site V7 Modelo Final
 
-Reformulação completa da página inicial, sem foto de técnico.
+Versão completa baseada no último protótipo aprovado.
 
-## Principais melhorias
+## Inclui
 
-- Hero institucional com escudo e ícones de pragas
-- Atendimento 24 horas
-- Serviços em cards
+- Nova logo e escudo premium
+- Banner institucional sem foto de técnico
+- Serviços
 - Diferenciais
+- Formulário de orçamento pelo WhatsApp
 - Como funciona
-- Chamada para WhatsApp e telefone
-- SEO local
-- Schema LocalBusiness
-- sitemap.xml
-- robots.txt
-- Página de orçamento pelo WhatsApp
+- Avaliação no Google
+- Área de atendimento
+- Rodapé completo
+- SEO, sitemap e robots.txt
 
 ## Publicar
 
-Copie os arquivos desta versão para a pasta atual `ddprime-site-v1`.
+Copie todos os arquivos desta pasta para `ddprime-site-v1`, substituindo os atuais.
 
 Depois execute:
 
@@ -26,8 +25,6 @@ Depois execute:
 npm.cmd install
 npm.cmd run build
 git add .
-git commit -m "Reformula página inicial premium"
+git commit -m "Publica modelo final do site"
 git push
 ```
-
-A Vercel publicará automaticamente.

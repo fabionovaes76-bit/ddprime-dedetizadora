@@ -1,30 +1,38 @@
 import Image from "next/image";
-import Link from "next/link";
 
-export default function Header() {
-  return (
-    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
-      <div className="container flex min-h-20 items-center justify-between gap-5">
-        <Link href="/" className="flex items-center">
+export default function Header(){
+  return(
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#06172a]/95 text-white backdrop-blur">
+      <div className="container flex min-h-24 items-center justify-between gap-5">
+        <a href="#inicio" className="flex items-center">
           <Image
-            src="/logo-ddprime.png"
+            src="/logo-ddprime-final.png"
             alt="DD Prime Dedetizadora"
-            width={160}
-            height={70}
+            width={285}
+            height={115}
             priority
-            className="h-16 w-auto object-contain"
+            className="h-20 w-auto object-contain"
           />
-        </Link>
-        <nav className="desktop-nav flex items-center gap-7 text-sm font-black text-slate-700">
+        </a>
+
+        <nav className="desktop-nav flex items-center gap-6 text-sm font-black">
+          <a href="#inicio" className="text-orange-400">Início</a>
           <a href="#servicos">Serviços</a>
           <a href="#diferenciais">Diferenciais</a>
           <a href="#como-funciona">Como funciona</a>
+          <a href="#avaliacoes">Avaliações</a>
           <a href="#contato">Contato</a>
         </nav>
-        <Link href="/orcamento" className="btn btn-primary text-sm">
-          Solicitar orçamento
-        </Link>
+
+        <div className="hidden items-center gap-2 lg:flex">
+          <a href="tel:+5567981086008" className="rounded-xl border border-orange-400 px-4 py-3 text-sm font-black">
+            (67) 98108-6008
+          </a>
+          <a href="https://wa.me/5567981086008?text=Olá%2C%20gostaria%20de%20solicitar%20um%20orçamento." className="btn btn-green text-sm">
+            WhatsApp
+          </a>
+        </div>
       </div>
     </header>
-  );
+  )
 }
