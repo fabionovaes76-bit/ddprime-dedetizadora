@@ -1,39 +1,34 @@
-# Site da DD Prime Dedetizadora
+# DD Prime Site V3
 
-Projeto em Next.js, React, TypeScript e Tailwind CSS.
+Versão premium do site da DD Prime Dedetizadora.
 
-## Executar no computador
+## Inclui
 
-1. Instale o Node.js 20 ou superior.
-2. Abra a pasta do projeto no terminal.
-3. Execute:
+- Home responsiva
+- Páginas de serviços, sobre, contato e orçamento
+- Simulador de orçamento pelo WhatsApp
+- Logo e cores da DD Prime
+- Next.js 16.2
+- TypeScript e Tailwind CSS
+
+## Executar
 
 ```bash
 npm install
 npm run dev
 ```
 
-4. Acesse `http://localhost:3000`.
+Abra `http://localhost:3000`.
 
-## Publicar na Vercel
+## Publicar no repositório atual
 
-1. Envie a pasta para um repositório no GitHub.
-2. Entre na Vercel.
-3. Importe o repositório.
-4. Clique em Deploy.
+Copie os arquivos desta versão para a pasta do projeto atual e execute:
 
-## Dados usados
+```bash
+npm install
+git add .
+git commit -m "Publica versão premium do site"
+git push
+```
 
-- DD Prime Dedetizadora
-- Rua Marcelino Pires, 237
-- Vila Ieda
-- Campo Grande-MS
-- WhatsApp: (67) 98108-6008
-- E-mail: ddprimededetisadora@gmail.com
-
-## Antes da publicação
-
-- Confirme os textos de garantia.
-- Adicione fotos reais da equipe e dos serviços.
-- Troque depoimentos ilustrativos por avaliações reais autorizadas.
-- Configure o domínio definitivo.
+A Vercel iniciará uma nova implantação automaticamente.

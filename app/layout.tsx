@@ -2,9 +2,12 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "DD Prime Dedetizadora | Campo Grande-MS",
+  title: {
+    default: "DD Prime Dedetizadora | Campo Grande-MS",
+    template: "%s | DD Prime Dedetizadora",
+  },
   description:
-    "Dedetização, desratização, descupinização e controle de escorpiões em Campo Grande-MS.",
+    "Dedetização, descupinização, desratização e controle de escorpiões em Campo Grande-MS.",
 };
 
 export default function RootLayout({
