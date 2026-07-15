@@ -1,1 +1,59 @@
-"use client";import {FormEvent} from "react";export default function QuoteForm(){function submit(e:FormEvent<HTMLFormElement>){e.preventDefault();const f=new FormData(e.currentTarget);const m=["Olá, gostaria de solicitar um orçamento.","",`Nome: ${f.get("nome")||""}`,`Telefone: ${f.get("telefone")||""}`,`Bairro: ${f.get("bairro")||""}`,`Serviço: ${f.get("servico")||""}`,`Detalhes: ${f.get("detalhes")||"Não informado"}`].join("\n");window.open(`https://wa.me/5567981086008?text=${encodeURIComponent(m)}`,"_blank")}const c="rounded-xl border border-slate-300 bg-white p-3 outline-none focus:border-orange-500";return <form onSubmit={submit} className="grid gap-4"><input name="nome" required placeholder="Nome completo" className={c}/><div className="grid gap-4 md:grid-cols-2"><input name="telefone" required placeholder="Telefone / WhatsApp" className={c}/><input name="bairro" required placeholder="Bairro" className={c}/></div><select name="servico" required className={c}><option value="">Selecione o serviço</option><option>Dedetização</option><option>Descupinização</option><option>Desratização</option><option>Controle de escorpiões</option><option>Plano empresarial</option></select><textarea name="detalhes" rows={4} className={c} placeholder="Descreva a situação"/><button className="btn btn-green">Enviar pelo WhatsApp</button></form>}
+"use client";
+
+import { FormEvent } from "react";
+
+export default function QuoteForm() {
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const form = new FormData(event.currentTarget);
+
+    const message = [
+      "Olá, gostaria de solicitar um orçamento.",
+      "",
+      `Nome: ${form.get("nome") || ""}`,
+      `Telefone: ${form.get("telefone") || ""}`,
+      `Bairro: ${form.get("bairro") || ""}`,
+      `Serviço: ${form.get("servico") || ""}`,
+      `Detalhes: ${form.get("detalhes") || "Não informado"}`,
+    ].join("\n");
+
+    window.open(
+      `https://wa.me/5567981086008?text=${encodeURIComponent(message)}`,
+      "_blank"
+    );
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="form-grid">
+      <input className="field" name="nome" required placeholder="Nome completo" />
+
+      <div className="form-two">
+        <input className="field" name="telefone" required placeholder="WhatsApp" />
+        <input className="field" name="bairro" required placeholder="Bairro" />
+      </div>
+
+      <select className="field" name="servico" required defaultValue="">
+        <option value="" disabled>Selecione o serviço</option>
+        <option>Dedetização</option>
+        <option>Desratização</option>
+        <option>Descupinização</option>
+        <option>Controle de escorpiões</option>
+        <option>Controle de baratas</option>
+        <option>Controle de formigas</option>
+        <option>Controle de aranhas</option>
+        <option>Plano empresarial</option>
+      </select>
+
+      <textarea
+        className="field"
+        name="detalhes"
+        rows={4}
+        placeholder="Descreva a situação"
+      />
+
+      <button className="btn btn-green" type="submit">
+        Enviar pelo WhatsApp
+      </button>
+    </form>
+  );
+}

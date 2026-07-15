@@ -1,1 +1,101 @@
-import Image from "next/image";import Link from "next/link";import {Award,BadgeCheck,Bug,Building2,CalendarCheck,CheckCircle2,Clock3,MapPin,MessageCircle,Phone,Rat,ShieldCheck,Sparkles,Star,Zap} from "lucide-react";import Header from "@/components/Header";import Footer from "@/components/Footer";import QuoteForm from "@/components/QuoteForm";import WhatsAppButton from "@/components/WhatsAppButton";const services=[[Bug,"Dedetização","Controle de baratas, formigas, aranhas, pulgas e outras pragas urbanas."],[Rat,"Desratização","Controle de ratos, camundongos e outros roedores."],[Sparkles,"Descupinização","Tratamento para cupins de madeira seca e subterrâneos."],[ShieldCheck,"Controle de escorpiões","Tratamento direcionado e orientação preventiva."],[Bug,"Controle de formigas","Controle de colônias e prevenção de novas infestações."],[Building2,"Planos empresariais","Atendimento periódico para empresas, comércios e condomínios."]];export default function HomePage(){const schema={"@context":"https://schema.org","@type":"LocalBusiness",name:"DD Prime Dedetizadora",url:"https://ddprimededetizadora.com.br",telephone:"+55-67-98108-6008",email:"ddprimededetizadora@gmail.com",address:{"@type":"PostalAddress",streetAddress:"Rua Marcelino Pires, 237",addressLocality:"Campo Grande",addressRegion:"MS",postalCode:"79050-570",addressCountry:"BR"},openingHours:"Mo-Su 00:00-23:59",areaServed:"Campo Grande - MS",sameAs:["https://g.page/r/CWHLPzas78KlEBM/review"]};return <main><Header/><section id="inicio" className="enterprise-hero"><div className="enterprise-grid"/><div className="enterprise-city"/><div className="container relative z-10 grid min-h-[820px] items-center gap-12 py-16 lg:grid-cols-[1.06fr_.94fr]"><div><span className="enterprise-badge"><MapPin size={17}/> Dedetizadora em Campo Grande-MS</span><p className="mt-7 text-sm font-black uppercase tracking-[.18em] text-orange-300">Proteção profissional contra pragas urbanas</p><h1 className="mt-4 max-w-4xl text-4xl font-black leading-[1.02] md:text-6xl xl:text-7xl">Controle de pragas com padrão profissional.<span className="block text-orange-400">Segurança para residências e empresas.</span></h1><p className="mt-6 max-w-2xl text-lg leading-8 text-slate-200">Dedetização, descupinização, desratização e controle de escorpiões com atendimento 24 horas e orçamento direto pelo WhatsApp.</p><div className="mt-8 flex flex-wrap gap-3"><Link className="btn btn-orange" href="/orcamento">Solicitar orçamento</Link><a className="btn btn-green" href="https://wa.me/5567981086008"><MessageCircle size={19}/> Falar no WhatsApp</a></div><div className="mt-8 flex flex-wrap gap-5 text-sm font-black text-slate-100"><span className="inline-flex items-center gap-2"><Phone size={17}/> (67) 98108-6008</span><span className="inline-flex items-center gap-2"><Clock3 size={17}/> Atendimento 24h</span><span className="inline-flex items-center gap-2"><CheckCircle2 size={17}/> Campo Grande-MS</span></div></div><div className="enterprise-visual"><div className="enterprise-ring r1"/><div className="enterprise-ring r2"/><div className="enterprise-ring r3"/><div className="enterprise-shield"><Image src="/shield-enterprise.png" alt="Escudo DD Prime" width={720} height={660} priority className="h-auto w-full object-contain"/></div><div className="enterprise-pests">{[["🪳","Baratas"],["🦂","Escorpiões"],["🐀","Ratos"],["🐜","Cupins"],["🐜","Formigas"]].map(([i,l])=><div className="enterprise-pest" key={l}><span>{i}</span><strong>{l}</strong></div>)}</div></div></div></section><div className="container enterprise-trust"><div className="enterprise-trust-grid">{[[Clock3,"Atendimento 24 horas","Todos os dias"],[ShieldCheck,"Atendimento responsável","Orientação em cada etapa"],[Award,"Garantia do serviço","Conforme contratação"],[Building2,"Residencial e empresarial","Soluções por ambiente"]].map(([I,t,d])=>{const Icon=I as typeof Clock3;return <article className="enterprise-trust-card" key={String(t)}><div className="iconbox"><Icon size={24}/></div><div><h2 className="font-black text-[#071c31]">{String(t)}</h2><p className="mt-1 text-sm text-slate-500">{String(d)}</p></div></article>})}</div></div><section id="servicos" className="section enterprise-services"><div className="container"><div className="text-center"><p className="kicker">Serviços DD Prime</p><h2 className="title">Soluções profissionais para cada necessidade</h2><p className="subtitle mx-auto mt-5 max-w-3xl">Atendimento para residências, apartamentos, comércios, empresas, restaurantes e condomínios.</p></div><div className="enterprise-service-grid mt-12">{services.map(([I,t,d],n)=>{const Icon=I as typeof Bug;return <article className="enterprise-service-card" key={String(t)}><div className="enterprise-service-number">{String(n+1).padStart(2,"0")}</div><div className="service-icon"><Icon size={31}/></div><h3>{String(t)}</h3><p>{String(d)}</p><Link href="/orcamento">Solicitar avaliação →</Link></article>})}</div></div></section><section id="diferenciais" className="section bg-[#fff8f2]"><div className="container"><div className="enterprise-dark"><div className="grid items-center gap-10 lg:grid-cols-[.86fr_1.14fr]"><div className="enterprise-logo-panel"><Image src="/shield-enterprise.png" alt="Escudo DD Prime" width={500} height={460} className="mx-auto h-auto w-full max-w-[390px] object-contain"/><div className="enterprise-logo-ring"/></div><div className="p-8 md:p-12"><p className="text-sm font-black uppercase tracking-[.14em] text-orange-300">Diferenciais DD Prime</p><h2 className="mt-3 text-3xl font-black leading-tight md:text-5xl">Atendimento organizado, moderno e focado em segurança</h2><div className="mt-9 grid gap-4 sm:grid-cols-2">{[[Zap,"Contato rápido","Atendimento direto pelo WhatsApp."],[ShieldCheck,"Orientação clara","Cuidados explicados antes e depois."],[BadgeCheck,"Equipe preparada","Solução indicada para cada ambiente."],[Building2,"Planos personalizados","Residências, empresas e condomínios."]].map(([I,t,d])=>{const Icon=I as typeof Zap;return <article className="enterprise-diff-card" key={String(t)}><Icon className="text-orange-400" size={28}/><h3 className="mt-4 font-black">{String(t)}</h3><p className="mt-2 text-sm leading-6 text-slate-300">{String(d)}</p></article>})}</div></div></div></div></div></section><section id="como-funciona" className="section"><div className="container"><div className="text-center"><p className="kicker">Como funciona</p><h2 className="title">Um atendimento simples em quatro etapas</h2></div><div className="enterprise-process mt-12">{[[MessageCircle,"Solicite o orçamento","Envie os detalhes pelo WhatsApp."],[CalendarCheck,"Agendamento","Combinamos o melhor dia e horário."],[Zap,"Execução","Realizamos o tratamento recomendado."],[ShieldCheck,"Orientação final","Explicamos os cuidados posteriores."]].map(([I,t,d],n)=>{const Icon=I as typeof MessageCircle;return <article className="enterprise-process-card" key={String(t)}><div className="enterprise-step">{n+1}</div><div className="process-icon"><Icon size={24}/></div><h3 className="mt-5 font-black text-[#071c31]">{String(t)}</h3><p className="mt-2 text-sm leading-6 text-slate-600">{String(d)}</p></article>})}</div></div></section><section id="avaliacoes" className="section bg-slate-50"><div className="container"><div className="text-center"><p className="kicker">Presença no Google</p><h2 className="title">Avaliações 5 estrelas</h2></div><div className="mt-12 grid gap-5 md:grid-cols-3">{[["Atendimento","Veja as avaliações e conheça a experiência de outros clientes."],["Confiança","Uma empresa local com presença ativa no Google."],["Qualidade","Compartilhe sua opinião sobre o atendimento recebido."]].map(([t,d])=><article className="enterprise-review-card" key={t}><div className="text-amber-400">★★★★★</div><h3 className="mt-5 text-xl font-black text-[#071c31]">{t}</h3><p className="mt-3 leading-7 text-slate-600">{d}</p></article>)}</div><div className="mt-9 text-center"><a href="https://g.page/r/CWHLPzas78KlEBM/review" className="btn btn-orange"><Star size={18}/> Ver e avaliar no Google</a></div></div></section><section className="section bg-[#fff8f2]"><div className="container grid gap-7 lg:grid-cols-[.9fr_1.1fr]"><article className="enterprise-map-card"><p className="text-sm font-black uppercase tracking-[.14em] text-orange-300">Área de atendimento</p><h2 className="mt-3 text-3xl font-black">Campo Grande-MS e região</h2><p className="mt-4 leading-7 text-slate-200">Atendimento para residências, empresas, condomínios e comércios.</p><div className="enterprise-map-visual mt-8"><MapPin size={58} className="text-orange-400"/><strong>Campo Grande-MS</strong></div></article><article className="enterprise-form-card"><p className="kicker">Orçamento rápido</p><h2 className="mt-3 text-3xl font-black text-[#071c31]">Conte qual é o problema</h2><p className="mt-3 text-slate-600">Preencha os dados e envie as informações diretamente para o WhatsApp.</p><div className="mt-7"><QuoteForm/></div></article></div></section><section className="enterprise-cta"><div className="container flex flex-col items-start justify-between gap-7 py-14 md:flex-row md:items-center"><div><p className="text-sm font-black uppercase tracking-[.14em] text-orange-300">Atendimento 24 horas</p><h2 className="mt-3 text-3xl font-black md:text-5xl">Proteja seu ambiente hoje mesmo.</h2></div><div className="flex flex-wrap gap-3"><a className="btn btn-outline" href="tel:+5567981086008"><Phone size={19}/> Ligar agora</a><a className="btn btn-green" href="https://wa.me/5567981086008"><MessageCircle size={19}/> Solicitar no WhatsApp</a></div></div></section><Footer/><WhatsAppButton/><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema)}}/></main>}
+import {
+  Award,
+  BadgeCheck,
+  Building2,
+  Clock3,
+  ShieldCheck,
+} from "lucide-react";
+
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import Services from "@/components/Services";
+import Differentials from "@/components/Differentials";
+import Process from "@/components/Process";
+import Reviews from "@/components/Reviews";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
+
+export default function HomePage() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "DD Prime Dedetizadora",
+    url: "https://ddprimededetizadora.com.br",
+    telephone: "+55-67-98108-6008",
+    email: "ddprimededetizadora@gmail.com",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Rua Marcelino Pires, 237",
+      addressLocality: "Campo Grande",
+      addressRegion: "MS",
+      postalCode: "79050-570",
+      addressCountry: "BR"
+    },
+    openingHours: "Mo-Su 00:00-23:59",
+    areaServed: "Campo Grande - MS",
+    sameAs: ["https://g.page/r/CWHLPzas78KlEBM/review"]
+  };
+
+  const trust = [
+    [BadgeCheck, "Empresa licenciada", "Regularizada e autorizada"],
+    [ShieldCheck, "Produtos registrados", "Aplicação conforme cada ambiente"],
+    [Building2, "Atendimento profissional", "Residencial e empresarial"],
+    [Award, "Garantia do serviço", "Conforme o serviço contratado"],
+    [Clock3, "Atendimento rápido", "Contato direto pelo WhatsApp"],
+  ];
+
+  return (
+    <main>
+      <Header />
+      <Hero />
+
+      <div className="container trust-wrap">
+        <div className="trust-grid">
+          {trust.map(([IconRef, title, text]) => {
+            const Icon = IconRef as typeof Clock3;
+
+            return (
+              <article className="trust-card" key={String(title)}>
+                <div className="icon-circle"><Icon size={23} /></div>
+                <div>
+                  <strong>{String(title)}</strong>
+                  <div className="mt-1 text-sm text-slate-500">{String(text)}</div>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      </div>
+
+      <Reviews />
+      <Services />
+      <Process />
+      <Differentials />
+      <Contact />
+
+      <section className="cta">
+        <div className="container flex flex-col items-start justify-between gap-6 py-14 md:flex-row md:items-center">
+          <div>
+            <p className="eyebrow">Atendimento 24 horas</p>
+            <h2 className="mt-3 text-4xl font-black md:text-5xl">
+              Proteja seu ambiente hoje mesmo.
+            </h2>
+          </div>
+
+          <a className="btn btn-green" href="https://wa.me/5567981086008">
+            Solicitar orçamento pelo WhatsApp
+          </a>
+        </div>
+      </section>
+
+      <Footer />
+      <WhatsAppButton />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+    </main>
+  );
+}

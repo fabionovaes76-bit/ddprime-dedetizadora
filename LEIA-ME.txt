@@ -1,0 +1,6 @@
+1. Pare o servidor com Ctrl + C.
+2. Copie as pastas app e components.
+3. Cole dentro de ddprime-enterprise-2026-premium-google-petfriendly.
+4. Escolha "Substituir os arquivos no destino".
+5. Execute npm.cmd run dev.
+6. Abra http://localhost:3000 e pressione Ctrl + F5.
