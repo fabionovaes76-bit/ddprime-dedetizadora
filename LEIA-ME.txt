@@ -1,24 +1,25 @@
-CORREÇÃO MOBILE DD PRIME
+ATUALIZAÇÃO DEFINITIVA DESKTOP + CELULAR
 
 Esta atualização corrige:
+- menu desktop e hambúrguer aparecendo juntos;
+- links duplicados abaixo do cabeçalho;
 - faixa branca lateral;
 - rolagem horizontal;
-- menu grande no celular;
-- título e botões saindo da tela;
-- cards e escudo fora da largura;
-- organização das seções no iPhone e Android.
+- título, botões e cards saindo da tela;
+- organização do Hero em computador, tablet, iPhone e Android.
 
 COMO APLICAR
 
 1. Pare o servidor com Ctrl + C.
-2. Copie as pastas app e components deste pacote.
-3. Cole dentro de:
+2. Extraia este ZIP.
+3. Copie as pastas app e components.
+4. Cole dentro de:
    DD_Prime_Site_Completo_V1\ddprime-site-v1
-4. Escolha "Substituir os arquivos no destino".
-5. No PowerShell, dentro de ddprime-site-v1, execute:
+5. Escolha "Substituir os arquivos no destino".
+6. No PowerShell, entre em ddprime-site-v1.
+7. Execute:
    npm.cmd run build
-6. Depois:
+8. Publique:
    git add .
-   git commit -m "Corrige versão mobile do site"
+   git commit -m "Corrige layout desktop e celular"
    git push origin main
-7. Aguarde a Vercel e teste no celular.

@@ -1,0 +1,297 @@
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+body {
+  position: relative;
+}
+
+main,
+header,
+footer,
+section {
+  width: 100%;
+  max-width: 100%;
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+@media (min-width: 1280px) {
+  .hero-inner {
+    grid-template-columns: minmax(0, 0.92fr) minmax(620px, 1.08fr) !important;
+    min-height: calc(100vh - 170px) !important;
+    gap: 30px !important;
+    padding: 64px 0 46px !important;
+  }
+
+  .hero-stage {
+    display: grid !important;
+    grid-template-columns: minmax(480px, 1fr) 230px !important;
+    align-items: center !important;
+    transform: translateY(-18px) !important;
+  }
+
+  .shield-stage {
+    min-height: 640px !important;
+  }
+
+  .hero-shield {
+    width: min(640px, 44vw) !important;
+  }
+
+  .pest-list {
+    position: relative !important;
+    display: grid !important;
+    width: 100% !important;
+    grid-template-columns: 1fr !important;
+    transform: none !important;
+  }
+}
+
+@media (max-width: 1279px) {
+  .topbar {
+    display: none !important;
+  }
+
+  .hero-inner {
+    display: flex !important;
+    width: 100% !important;
+    min-height: auto !important;
+    flex-direction: column !important;
+    gap: 28px !important;
+    padding: 40px 18px 48px !important;
+  }
+
+  .hero-copy-column {
+    width: 100% !important;
+    max-width: 760px !important;
+    padding: 0 !important;
+  }
+
+  .hero-badge {
+    width: fit-content !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    line-height: 1.4 !important;
+  }
+
+  .hero h1 {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-top: 20px !important;
+    font-size: clamp(44px, 8vw, 70px) !important;
+    line-height: 0.99 !important;
+    overflow-wrap: break-word !important;
+  }
+
+  .hero-copy {
+    width: 100% !important;
+    max-width: 720px !important;
+  }
+
+  .hero-actions {
+    display: grid !important;
+    width: 100% !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .hero-actions .btn {
+    width: 100% !important;
+    min-width: 0 !important;
+    white-space: normal !important;
+    text-align: center !important;
+  }
+
+  .hero-points {
+    display: grid !important;
+    width: 100% !important;
+    max-width: 720px !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .hero-stage {
+    display: flex !important;
+    width: 100% !important;
+    min-height: auto !important;
+    flex-direction: column !important;
+    gap: 22px !important;
+    transform: none !important;
+  }
+
+  .shield-stage {
+    width: 100% !important;
+    min-height: 480px !important;
+  }
+
+  .hero-shield {
+    width: min(500px, 88vw) !important;
+  }
+
+  .orbit-one {
+    width: min(450px, 84vw) !important;
+    height: min(450px, 84vw) !important;
+  }
+
+  .orbit-two {
+    width: min(360px, 68vw) !important;
+    height: min(360px, 68vw) !important;
+  }
+
+  .orbit-three {
+    display: none !important;
+  }
+
+  .platform {
+    width: min(390px, 70vw) !important;
+  }
+
+  .pest-list {
+    position: relative !important;
+    display: grid !important;
+    width: 100% !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    transform: none !important;
+    gap: 10px !important;
+  }
+
+  .pest-item {
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 62px !important;
+  }
+
+  .trust-wrap {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 14px 30px !important;
+  }
+
+  .trust-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .reviews-pet-layout,
+  .contact-grid,
+  .dark-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .service-grid,
+  .service-grid-premium,
+  .process-grid,
+  .process-grid-final,
+  .diff-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .hero-inner {
+    padding: 30px 16px 42px !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(38px, 11.8vw, 52px) !important;
+    letter-spacing: -0.035em !important;
+  }
+
+  .hero-copy {
+    font-size: 16px !important;
+  }
+
+  .hero-actions {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero-points {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+  }
+
+  .metric {
+    min-width: 0 !important;
+    min-height: 104px !important;
+    padding: 14px !important;
+  }
+
+  .shield-stage {
+    min-height: 370px !important;
+  }
+
+  .hero-shield {
+    width: min(400px, 94vw) !important;
+  }
+
+  .orbit-one {
+    width: min(350px, 88vw) !important;
+    height: min(350px, 88vw) !important;
+  }
+
+  .orbit-two {
+    width: min(285px, 70vw) !important;
+    height: min(285px, 70vw) !important;
+  }
+
+  .pest-list {
+    grid-template-columns: 1fr !important;
+  }
+
+  .trust-grid,
+  .service-grid,
+  .service-grid-premium,
+  .process-grid,
+  .process-grid-final,
+  .diff-grid,
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .google-reviews-panel,
+  .form-card,
+  .map-card,
+  .diff-content,
+  .process-premium-panel {
+    padding: 24px 18px !important;
+  }
+
+  .google-reviews-panel .review-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .reviews-heading {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .review-button {
+    width: 100% !important;
+  }
+
+  .pet-image-wrap {
+    min-height: 250px !important;
+  }
+
+  .float-wa {
+    right: 14px !important;
+    bottom: 14px !important;
+    width: 58px !important;
+    height: 58px !important;
+  }
+}

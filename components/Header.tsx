@@ -18,21 +18,17 @@ const links = [
 export default function Header() {
   const [open, setOpen] = useState(false);
 
-  function closeMenu() {
-    setOpen(false);
-  }
-
   return (
     <>
       <TopBar />
 
-      <header className="site-header sticky top-0 z-50 border-b border-white/10 bg-[#06172a]/96 text-white backdrop-blur">
-        <div className="container header-inner">
+      <header className="sticky top-0 z-50 border-b border-white/10 bg-[#06172a]/95 text-white shadow-xl backdrop-blur">
+        <div className="mx-auto flex min-h-[92px] w-full max-w-[1440px] items-center justify-between gap-4 px-4 sm:px-6 lg:min-h-[126px] lg:px-8">
           <Link
             href="/"
+            className="flex shrink-0 items-center"
             aria-label="DD Prime Dedetizadora"
-            className="brand-link"
-            onClick={closeMenu}
+            onClick={() => setOpen(false)}
           >
             <Image
               src="/logo.png"
@@ -40,25 +36,39 @@ export default function Header() {
               width={390}
               height={125}
               priority
-              className="header-logo"
+              className="h-[64px] w-auto object-contain sm:h-[72px] lg:h-[96px]"
             />
           </Link>
 
-          <nav className="desktop-nav main-nav" aria-label="Navegação principal">
+          <nav
+            className="hidden items-center gap-5 text-sm font-black xl:flex"
+            aria-label="Navegação principal"
+          >
             {links.map(([href, label], index) => (
-              <a href={href} className={index === 0 ? "active" : ""} key={href}>
+              <a
+                key={href}
+                href={href}
+                className={`border-b-3 py-4 transition ${
+                  index === 0
+                    ? "border-orange-500"
+                    : "border-transparent hover:border-orange-500"
+                }`}
+              >
                 {label}
               </a>
             ))}
           </nav>
 
-          <div className="header-actions hidden lg:flex">
-            <a href="tel:+5567981086008" className="phone-button">
+          <div className="hidden items-center gap-3 xl:flex">
+            <a
+              href="tel:+5567981086008"
+              className="rounded-xl border border-orange-500 px-5 py-4 font-black transition hover:bg-orange-500/10"
+            >
               (67) 98108-6008
             </a>
             <a
               href="https://wa.me/5567981086008"
-              className="btn btn-green whatsapp-header"
+              className="rounded-xl bg-[#25d366] px-6 py-4 font-black shadow-[0_14px_35px_rgba(37,211,102,.30)] transition hover:-translate-y-0.5"
             >
               WhatsApp
             </a>
@@ -66,36 +76,48 @@ export default function Header() {
 
           <button
             type="button"
-            className="mobile-menu-button"
+            className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/15 bg-white/5 xl:hidden"
             aria-label={open ? "Fechar menu" : "Abrir menu"}
             aria-expanded={open}
-            onClick={() => setOpen((value) => !value)}
+            onClick={() => setOpen((current) => !current)}
           >
-            {open ? <X size={29} /> : <Menu size={29} />}
+            {open ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
 
-        <div className={`mobile-menu ${open ? "mobile-menu-open" : ""}`}>
-          <nav aria-label="Navegação para celular">
-            {links.map(([href, label]) => (
-              <a href={href} key={href} onClick={closeMenu}>
-                {label}
-              </a>
-            ))}
-          </nav>
+        <div className={`xl:hidden ${open ? "block" : "hidden"}`}>
+          <div className="border-t border-white/10 bg-[#06172a] px-4 pb-5 pt-2 shadow-2xl sm:px-6">
+            <nav className="grid" aria-label="Navegação para celular">
+              {links.map(([href, label]) => (
+                <a
+                  key={href}
+                  href={href}
+                  className="border-b border-white/10 py-4 text-base font-black"
+                  onClick={() => setOpen(false)}
+                >
+                  {label}
+                </a>
+              ))}
+            </nav>
 
-          <div className="mobile-menu-actions">
-            <a href="tel:+5567981086008" className="mobile-phone" onClick={closeMenu}>
-              <Phone size={18} />
-              (67) 98108-6008
-            </a>
-            <a
-              href="https://wa.me/5567981086008"
-              className="btn btn-green"
-              onClick={closeMenu}
-            >
-              Falar no WhatsApp
-            </a>
+            <div className="mt-4 grid gap-3 sm:grid-cols-2">
+              <a
+                href="tel:+5567981086008"
+                className="flex min-h-13 items-center justify-center gap-2 rounded-xl border border-orange-500 font-black"
+                onClick={() => setOpen(false)}
+              >
+                <Phone size={18} />
+                (67) 98108-6008
+              </a>
+
+              <a
+                href="https://wa.me/5567981086008"
+                className="flex min-h-13 items-center justify-center rounded-xl bg-[#25d366] font-black"
+                onClick={() => setOpen(false)}
+              >
+                Falar no WhatsApp
+              </a>
+            </div>
           </div>
         </div>
       </header>

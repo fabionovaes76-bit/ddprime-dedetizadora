@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "./responsive-final.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ddprimededetizadora.com.br"),
