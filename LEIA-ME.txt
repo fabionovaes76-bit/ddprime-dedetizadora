@@ -1,6 +1,24 @@
+CORREÇÃO MOBILE DD PRIME
+
+Esta atualização corrige:
+- faixa branca lateral;
+- rolagem horizontal;
+- menu grande no celular;
+- título e botões saindo da tela;
+- cards e escudo fora da largura;
+- organização das seções no iPhone e Android.
+
+COMO APLICAR
+
 1. Pare o servidor com Ctrl + C.
-2. Copie as pastas app e components.
-3. Cole dentro de ddprime-enterprise-2026-premium-google-petfriendly.
+2. Copie as pastas app e components deste pacote.
+3. Cole dentro de:
+   DD_Prime_Site_Completo_V1\ddprime-site-v1
 4. Escolha "Substituir os arquivos no destino".
-5. Execute npm.cmd run dev.
-6. Abra http://localhost:3000 e pressione Ctrl + F5.
+5. No PowerShell, dentro de ddprime-site-v1, execute:
+   npm.cmd run build
+6. Depois:
+   git add .
+   git commit -m "Corrige versão mobile do site"
+   git push origin main
+7. Aguarde a Vercel e teste no celular.
