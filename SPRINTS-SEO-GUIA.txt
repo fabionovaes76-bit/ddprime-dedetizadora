@@ -1,0 +1,23 @@
+DD PRIME — PACOTE COMPLETO DE SPRINTS SEO
+
+IMPLEMENTADO NO CÓDIGO
+1. Página pilar de dedetização em Campo Grande-MS.
+2. Páginas de descupinização, desratização, escorpiões, baratas, formigas e cupins.
+3. Páginas para residências, empresas e condomínios.
+4. Centro de conteúdo com quatro artigos iniciais.
+5. Metadados, canonical, Open Graph, Twitter Cards, Service Schema, FAQ Schema e Breadcrumb Schema.
+6. Links internos, CTAs para WhatsApp/orçamento e sitemap ampliado.
+7. Conversões GA4 já existentes no pacote SEO anterior: WhatsApp, telefone e formulário.
+
+ETAPAS EXTERNAS (NÃO SÃO FEITAS APENAS PELO CÓDIGO)
+- Importar eventos do GA4 como conversões no Google Ads.
+- Otimizar o Perfil da Empresa no Google com categorias, serviços, fotos e postagens.
+- Solicitar indexação das novas páginas após o deploy.
+
+FLUXO SEGURO
+npm.cmd run build
+git add .
+git commit -m "Sprints SEO completas"
+git push origin desenvolvimento-seo
+
+Após revisar, fazer merge na main.
