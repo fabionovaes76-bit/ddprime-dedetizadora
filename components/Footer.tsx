@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Clock3, MapPin, MessageCircle, Phone, Star } from "lucide-react";
+import AnalyticsLink from "./AnalyticsLink";
 
 export default function Footer() {
   return (
@@ -9,11 +10,10 @@ export default function Footer() {
           <Image src="/logo.png" alt="DD Prime Dedetizadora" width={310} height={110} className="footer-logo" />
           <p>Controle profissional de pragas urbanas para residências, empresas e condomínios em Campo Grande-MS.</p>
           <div className="footer-social">
-            <a href="https://wa.me/5567981086008" aria-label="WhatsApp"><MessageCircle size={20} /></a>
+            <AnalyticsLink href="https://wa.me/5567981086008" aria-label="WhatsApp" eventName="click_whatsapp" eventParams={{ location: "footer_social" }}><MessageCircle size={20} /></AnalyticsLink>
             <a href="https://g.page/r/CWHLPzas78KlEBM/review" aria-label="Avaliações da DD Prime no Google"><Star size={20} /></a>
           </div>
         </div>
-
         <div>
           <h3>Serviços</h3>
           <div className="footer-links">
@@ -21,27 +21,24 @@ export default function Footer() {
             <span>Controle de escorpiões</span><span>Planos empresariais</span>
           </div>
         </div>
-
         <div>
           <h3>Links rápidos</h3>
           <div className="footer-links">
-            <a href="#inicio">Início</a><a href="#servicos">Serviços</a>
-            <a href="#diferenciais">Diferenciais</a><a href="#avaliacoes">Avaliações</a>
+            <a href="/#inicio">Início</a><a href="/#servicos">Serviços</a>
+            <a href="/#diferenciais">Diferenciais</a><a href="/#avaliacoes">Avaliações</a>
             <a href="/orcamento">Solicitar orçamento</a>
           </div>
         </div>
-
         <div>
           <h3>Atendimento</h3>
           <div className="footer-contact">
-            <span><Phone size={17} /> (67) 98108-6008</span>
+            <AnalyticsLink href="tel:+5567981086008" eventName="click_phone" eventParams={{ location: "footer" }}><Phone size={17} /> (67) 98108-6008</AnalyticsLink>
             <span><MapPin size={17} /> Campo Grande-MS</span>
             <span><Clock3 size={17} /> Atendimento 24 horas</span>
           </div>
-          <a className="btn btn-green footer-cta" href="https://wa.me/5567981086008">Falar no WhatsApp</a>
+          <AnalyticsLink className="btn btn-green footer-cta" href="https://wa.me/5567981086008" eventName="click_whatsapp" eventParams={{ location: "footer_cta" }}>Falar no WhatsApp</AnalyticsLink>
         </div>
       </div>
-
       <div className="footer-bottom">
         <div className="container">
           <span>© 2026 DD Prime Dedetizadora.</span>

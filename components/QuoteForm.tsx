@@ -17,9 +17,15 @@ export default function QuoteForm() {
       `Detalhes: ${form.get("detalhes") || "Não informado"}`,
     ].join("\n");
 
+    window.gtag?.("event", "generate_lead", {
+      method: "whatsapp_form",
+      service: String(form.get("servico") || "nao_informado"),
+    });
+
     window.open(
       `https://wa.me/5567981086008?text=${encodeURIComponent(message)}`,
-      "_blank"
+      "_blank",
+      "noopener,noreferrer"
     );
   }
 

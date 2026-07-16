@@ -1,0 +1,34 @@
+DD PRIME — PACOTE SEO E CONVERSÕES
+
+Implementado:
+- Metadados exclusivos para Início, Serviços, Orçamento, Contato e Sobre.
+- Canonical URL em todas as páginas.
+- Open Graph e Twitter Cards.
+- Google Search Console preservado e código de verificação corrigido.
+- Google Analytics GA4 preservado: G-1X6J8LE52T.
+- Eventos GA4:
+  click_whatsapp — botões de WhatsApp.
+  click_phone — links de ligação.
+  generate_lead — envio do formulário de orçamento para WhatsApp.
+- LocalBusiness/PestControl e WebSite Schema.
+- Service Schema na página Serviços.
+- Breadcrumb Schema nas páginas internas.
+- FAQ visível e FAQ Schema na página inicial.
+- SEO local para Campo Grande-MS.
+- Sitemap e robots preservados.
+
+VALIDAÇÃO
+- npm run build executado com sucesso no Next.js 15.5.9.
+
+PUBLICAÇÃO
+1. Substitua os arquivos do seu projeto pelos arquivos deste pacote.
+2. Execute: npm.cmd run build
+3. Execute: git add .
+4. Execute: git commit -m "SEO completo e conversoes GA4"
+5. Execute: git push origin main
+
+GOOGLE ANALYTICS
+Depois que os eventos aparecerem no GA4, marque generate_lead, click_whatsapp e click_phone como eventos principais conforme sua estratégia. Para Google Ads, importe os eventos principais pelo vínculo Analytics > Google Ads.
+
+OBSERVAÇÃO
+Não foi adicionado Review/AggregateRating Schema porque estrelas nos resultados só devem usar avaliações reais, elegíveis e compatíveis com as políticas do Google.

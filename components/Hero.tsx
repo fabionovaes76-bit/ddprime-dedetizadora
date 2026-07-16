@@ -1,9 +1,6 @@
 import Image from "next/image";
-import {
-  MessageCircle,
-  Phone,
-  ShieldCheck,
-} from "lucide-react";
+import { MessageCircle, Phone, ShieldCheck } from "lucide-react";
+import AnalyticsLink from "./AnalyticsLink";
 
 const pests = [
   ["🪳", "Baratas"],
@@ -37,19 +34,26 @@ export default function Hero() {
           </p>
 
           <div className="hero-actions">
-            <a
+            <AnalyticsLink
               className="btn btn-orange"
               href="https://wa.me/5567981086008?text=Olá%2C%20gostaria%20de%20solicitar%20um%20orçamento."
+              eventName="click_whatsapp"
+              eventParams={{ location: "hero" }}
             >
               <MessageCircle size={20} />
               Falar no WhatsApp
-            </a>
+            </AnalyticsLink>
 
-            <a className="btn btn-outline" href="tel:+5567981086008">
+            <AnalyticsLink
+              className="btn btn-outline"
+              href="tel:+5567981086008"
+              eventName="click_phone"
+              eventParams={{ location: "hero" }}
+            >
               <Phone size={20} />
               Ligar agora
               <small>(67) 98108-6008</small>
-            </a>
+            </AnalyticsLink>
           </div>
 
           <div className="hero-points">
