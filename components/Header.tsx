@@ -5,15 +5,14 @@ import Link from "next/link";
 import { Menu, Phone, X } from "lucide-react";
 import { useState } from "react";
 import TopBar from "./TopBar";
-import AnalyticsLink from "./AnalyticsLink";
 
 const links = [
-  ["#inicio", "Início"],
-  ["#servicos", "Serviços"],
-  ["#diferenciais", "Diferenciais"],
-  ["#como-funciona", "Como funciona"],
-  ["#avaliacoes", "Avaliações"],
-  ["#contato", "Contato"],
+  ["/", "Início"],
+  ["/#servicos", "Serviços"],
+  ["/#diferenciais", "Diferenciais"],
+  ["/#como-funciona", "Como funciona"],
+  ["/#avaliacoes", "Avaliações"],
+  ["/#contato", "Contato"],
 ];
 
 export default function Header() {
@@ -61,22 +60,18 @@ export default function Header() {
           </nav>
 
           <div className="hidden items-center gap-3 xl:flex">
-            <AnalyticsLink
+            <a
               href="tel:+5567981086008"
               className="rounded-xl border border-orange-500 px-5 py-4 font-black transition hover:bg-orange-500/10"
-              eventName="click_phone"
-              eventParams={{ location: "desktop_header" }}
             >
               (67) 98108-6008
-            </AnalyticsLink>
-            <AnalyticsLink
+            </a>
+            <a
               href="https://wa.me/5567981086008"
               className="rounded-xl bg-[#25d366] px-6 py-4 font-black shadow-[0_14px_35px_rgba(37,211,102,.30)] transition hover:-translate-y-0.5"
-              eventName="click_whatsapp"
-              eventParams={{ location: "desktop_header" }}
             >
               WhatsApp
-            </AnalyticsLink>
+            </a>
           </div>
 
           <button
@@ -106,26 +101,22 @@ export default function Header() {
             </nav>
 
             <div className="mt-4 grid gap-3 sm:grid-cols-2">
-              <AnalyticsLink
+              <a
                 href="tel:+5567981086008"
                 className="flex min-h-13 items-center justify-center gap-2 rounded-xl border border-orange-500 font-black"
                 onClick={() => setOpen(false)}
-                eventName="click_phone"
-                eventParams={{ location: "mobile_header" }}
               >
                 <Phone size={18} />
                 (67) 98108-6008
-              </AnalyticsLink>
+              </a>
 
-              <AnalyticsLink
+              <a
                 href="https://wa.me/5567981086008"
                 className="flex min-h-13 items-center justify-center rounded-xl bg-[#25d366] font-black"
                 onClick={() => setOpen(false)}
-                eventName="click_whatsapp"
-                eventParams={{ location: "mobile_header" }}
               >
                 Falar no WhatsApp
-              </AnalyticsLink>
+              </a>
             </div>
           </div>
         </div>

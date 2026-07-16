@@ -1,25 +1,26 @@
-ATUALIZAÇÃO DEFINITIVA DESKTOP + CELULAR
+DD PRIME — SPRINT 1: PÁGINA PILAR
 
-Esta atualização corrige:
-- menu desktop e hambúrguer aparecendo juntos;
-- links duplicados abaixo do cabeçalho;
-- faixa branca lateral;
-- rolagem horizontal;
-- título, botões e cards saindo da tela;
-- organização do Hero em computador, tablet, iPhone e Android.
+Inclui:
+- Nova página /dedetizacao-campo-grande-ms
+- Meta title, description, canonical, Open Graph e Twitter Card
+- Schema Service, FAQPage e BreadcrumbList
+- Conteúdo SEO local para Campo Grande-MS
+- FAQ visível e chamadas para WhatsApp/orçamento
+- Link da Dedetização na seção de serviços
+- Menu corrigido para funcionar também nas páginas internas
+- Nova URL adicionada ao sitemap
 
 COMO APLICAR
-
 1. Pare o servidor com Ctrl + C.
-2. Extraia este ZIP.
-3. Copie as pastas app e components.
-4. Cole dentro de:
-   DD_Prime_Site_Completo_V1\ddprime-site-v1
-5. Escolha "Substituir os arquivos no destino".
-6. No PowerShell, entre em ddprime-site-v1.
-7. Execute:
-   npm.cmd run build
-8. Publique:
+2. Copie as pastas app e components deste pacote.
+3. Cole dentro de DD_Prime_Site_Completo_V1\ddprime-site-v1.
+4. Escolha "Substituir os arquivos no destino".
+5. Abra o PowerShell dentro de ddprime-site-v1.
+6. Execute: npm.cmd run build
+7. Publique:
    git add .
-   git commit -m "Corrige layout desktop e celular"
+   git commit -m "Sprint 1 pagina pilar dedetizacao Campo Grande"
    git push origin main
+
+Depois do deploy, abra:
+https://ddprimededetizadora.com.br/dedetizacao-campo-grande-ms

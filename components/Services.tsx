@@ -9,12 +9,12 @@ import {
 } from "lucide-react";
 
 const services = [
-  [Bug, "Dedetização", "Controle de baratas, formigas, aranhas, pulgas e outras pragas urbanas."],
-  [Rat, "Desratização", "Controle e prevenção de ratos, camundongos e outros roedores."],
-  [ShieldCheck, "Controle de escorpiões", "Tratamento direcionado e orientação preventiva para o ambiente."],
-  [Sparkles, "Descupinização", "Tratamento para cupins de madeira seca e cupins subterrâneos."],
-  [Droplets, "Limpeza de caixa d’água", "Limpeza e higienização para manter a água armazenada em boas condições."],
-  [Building2, "Planos empresariais", "Atendimento periódico para empresas, comércios e condomínios."],
+  [Bug, "Dedetização", "Controle de baratas, formigas, aranhas, pulgas e outras pragas urbanas.", "/dedetizacao-campo-grande-ms"],
+  [Rat, "Desratização", "Controle e prevenção de ratos, camundongos e outros roedores.", "/orcamento"],
+  [ShieldCheck, "Controle de escorpiões", "Tratamento direcionado e orientação preventiva para o ambiente.", "/orcamento"],
+  [Sparkles, "Descupinização", "Tratamento para cupins de madeira seca e cupins subterrâneos.", "/orcamento"],
+  [Droplets, "Limpeza de caixa d’água", "Limpeza e higienização para manter a água armazenada em boas condições.", "/orcamento"],
+  [Building2, "Planos empresariais", "Atendimento periódico para empresas, comércios e condomínios.", "/orcamento"],
 ];
 
 export default function Services() {
@@ -33,7 +33,7 @@ export default function Services() {
         </div>
 
         <div className="service-grid service-grid-premium mt-12">
-          {services.map(([IconRef, title, text], index) => {
+          {services.map(([IconRef, title, text, href], index) => {
             const Icon = IconRef as typeof Bug;
 
             return (
@@ -46,7 +46,7 @@ export default function Services() {
                 </div>
                 <h3>{String(title)}</h3>
                 <p>{String(text)}</p>
-                <Link href="/orcamento">Solicitar avaliação →</Link>
+                <Link href={String(href)}>{index === 0 ? "Conhecer o serviço →" : "Solicitar avaliação →"}</Link>
               </article>
             );
           })}
